@@ -1,0 +1,118 @@
+import { Speaker, Armchair, Sparkles, Lightbulb } from "lucide-react";
+
+export const SERVICES = {
+    audio: {
+        id: "audio",
+        no: "01",
+        title: "Premium Audio Systems",
+        short: "Concert-hall clarity in your cabin.",
+        desc: "Tuned-to-room acoustics with reference-grade amplifiers, subwoofers and DSP for concert-hall clarity inside your cabin.",
+        long: "From whisper-quiet jazz to bass-heavy electronic, we engineer each install around your music and your car's acoustic signature. Reference amplifiers, custom enclosures, and digital signal processing tuned in-cabin by our audio engineers.",
+        icon: Speaker,
+        image:
+            "https://images.unsplash.com/photo-1758411898478-4f7e70d533d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjYXIlMjBhdWRpbyUyMHN5c3RlbXxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1758411898478-4f7e70d533d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjYXIlMjBhdWRpbyUyMHN5c3RlbXxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85",
+            "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+        ],
+        deliverables: [
+            "Component-grade speaker upgrade",
+            "Class-D / Class-AB amplifier integration",
+            "Custom subwoofer enclosure",
+            "DSP tuning & cabin acoustics calibration",
+            "Sound-deadening (Dynamat / equivalent)",
+            "Lifetime workmanship warranty",
+        ],
+        priceFrom: "₹85,000",
+        duration: "3–7 days",
+        span: "lg:col-span-7",
+        height: "min-h-[420px]",
+    },
+    interior: {
+        id: "interior",
+        no: "02",
+        title: "Custom Car Interiors",
+        short: "Italian leather. Hand-stitched. Yours.",
+        desc: "Italian leather, alcantara, hand-stitched dashboards. Bespoke cabins designed around the way you drive.",
+        long: "We rebuild your cabin from the floor up — full leather re-upholstery, alcantara headliners, hand-stitched dashboards and bespoke door cards. Every panel is templated, dry-fit, and finished in-house by our master upholsterers.",
+        icon: Armchair,
+        image:
+            "https://images.unsplash.com/photo-1599912027667-755b68b4dd3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvcnxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1599912027667-755b68b4dd3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvcnxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85",
+            "https://images.pexels.com/photos/16716122/pexels-photo-16716122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "https://images.pexels.com/photos/18262241/pexels-photo-18262241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        ],
+        deliverables: [
+            "Full Nappa / Italian leather re-upholstery",
+            "Alcantara headliner & pillar wrap",
+            "Hand-stitched dashboard & door cards",
+            "Custom contrast stitching",
+            "Heated / cooled seat retrofit (optional)",
+            "Wood / carbon-fibre trim inlays",
+        ],
+        priceFrom: "₹1,20,000",
+        duration: "10–18 days",
+        span: "lg:col-span-5",
+        height: "min-h-[420px]",
+    },
+    detailing: {
+        id: "detailing",
+        no: "03",
+        title: "Professional Detailing",
+        short: "Mirror finish. Coated to last.",
+        desc: "Multi-stage paint correction, ceramic coatings and a mirror-finish process trusted by collectors.",
+        long: "Our paint correction process is concours-grade: multi-stage compounding, polishing, and refinement under controlled lighting. Finished with 5H–10H ceramic coatings and a sealed hydrophobic top layer that lasts years.",
+        icon: Sparkles,
+        image:
+            "https://images.pexels.com/photos/14231701/pexels-photo-14231701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        gallery: [
+            "https://images.pexels.com/photos/14231701/pexels-photo-14231701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80",
+        ],
+        deliverables: [
+            "Decontamination wash & clay-bar treatment",
+            "Multi-stage paint correction (1–3 stage)",
+            "Ceramic coating (5H / 9H / 10H)",
+            "Headlight restoration",
+            "Engine bay detailing",
+            "Interior deep-clean & leather conditioning",
+        ],
+        priceFrom: "₹25,000",
+        duration: "2–5 days",
+        span: "lg:col-span-5",
+        height: "min-h-[380px]",
+    },
+    lighting: {
+        id: "lighting",
+        no: "04",
+        title: "Advanced Lighting",
+        short: "Signatures that set the mood.",
+        desc: "LED matrix headlamps, sequential signatures and ambient cabin lighting curated to set the mood, every time.",
+        long: "Sequential turn signals, LED matrix headlight retrofits, projector upgrades, underbody glow, and 64-zone ambient cabin lighting controlled from your infotainment. All installs are CAN-bus integrated and warranty-safe.",
+        icon: Lightbulb,
+        image:
+            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80",
+        ],
+        deliverables: [
+            "LED matrix / projector headlight upgrade",
+            "Sequential turn-signal modules",
+            "64-zone ambient interior lighting",
+            "Underbody / footwell LED kit",
+            "CAN-bus error-free wiring",
+            "App / infotainment control integration",
+        ],
+        priceFrom: "₹18,000",
+        duration: "1–3 days",
+        span: "lg:col-span-7",
+        height: "min-h-[380px]",
+    },
+};
+
+export const SERVICE_LIST = Object.values(SERVICES);
