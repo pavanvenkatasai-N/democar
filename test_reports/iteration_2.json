@@ -1,0 +1,36 @@
+{
+  "summary": "Frontend-only re-test of Honour Sports rebrand + new service-detail routes + WhatsApp quote flow. Most acceptance criteria pass: HONOUR SPORTS logo (car silhouette + wordmark + dashed CAR DECOR tagline) renders in header/footer, HS-001 hero badge present, hello@honoursports.in email shown (old hasanambacardecor domain removed), Google Map iframe present, honour.sports/HonourSports socials present, all 4 home Service cards are <Link to=/services/:id> for audio/interior/detailing/lighting, every /services/:id page renders title + italic tagline + long desc + price meta + duration meta + concierge strip + cover image + 6 deliverables + 3-image gallery + 3 related cards + quote form with all required data-testid (quote-name, quote-phone, quote-car, quote-notes, quote-submit-button), invalid /services/foo redirects to home, header nav from detail navigates to /#services, mobile menu opens at 375 width and there is no horizontal scroll on home or detail pages, zero console errors. However 3 bugs remain (see below).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "WhatsAppButton.jsx (L15)", "issue": "Floating WhatsApp prefilled message still says 'Hello Hasanamba Car Decor, ...' — old brand name leaked into the message body", "selector": "a[href*='wa.me'] (floating button)", "priority": "HIGH"},
+      {"component": "Testimonials.jsx (L15)", "issue": "Testimonial quote still references 'Hasanamba rebuilt my BMW...' — visible on home page", "selector": "#testimonials", "priority": "HIGH"},
+      {"component": "<title> tag", "issue": "Served HTML title is 'Emergent | Fullstack App' even though /app/frontend/public/index.html correctly sets 'Honour Sports — Premium Car Stereo & Styling, Hassan'. Likely a platform template/proxy override or stale build. Tab title is wrong in browser.", "selector": "document.title", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [
+      {"flow": "Home → Service detail scroll", "issue": "After scrolling home to y=400 and clicking the audio service card, the destination /services/audio page settles at scrollY=1241 instead of 0. ScrollToTop should reset to top. May be a race between ScrollToTop's instant scroll and useReveal/image layout pushing scroll back, or react-router scroll restoration overriding. Repro: scroll home, click any service card, observe page does not start at the top.", "affected_selectors": ["[data-testid='ScrollToTop']", "a[href='/services/audio']"]}
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Update WhatsAppButton.jsx: change prefilled message 'Hello Hasanamba Car Decor' → 'Hello Honour Sports'",
+    "Update Testimonials.jsx: replace 'Hasanamba rebuilt my BMW...' with brand-correct copy (e.g. 'Honour Sports rebuilt my BMW...')",
+    "Investigate why served document.title is 'Emergent | Fullstack App' despite public/index.html being correct — check if a hosted preview proxy is overriding the title or if frontend build is stale; consider also setting document.title from App.js/useEffect as a runtime safety net",
+    "Fix ScrollToTop race: try scrollTo(0,0) after a microtask / requestAnimationFrame, or use window.scrollTo({top:0,left:0}) without behavior:'instant' (some browsers ignore 'instant'). Verify route change from home (with non-zero scroll) lands at top of detail page"
+  ],
+  "critical_code_review_comments": [
+    "QuoteRequestForm correctly opens wa.me/919741908073 with encoded prefill — verified in source; URL contains service title, name, phone, car, notes",
+    "ScrollToTop uses behavior:'instant' which some browsers treat as 'auto' — safer to omit behavior or use 'auto'",
+    "Two hardcoded 'Hasanamba' strings missed in rebrand search (WhatsAppButton + Testimonials) — recommend a final grep -ri 'hasanamba' /app/frontend/src before release",
+    "All 4 service entries in /app/frontend/src/data/services.js have exactly 6 deliverables and 3 gallery images as specified — verified",
+    "Header.jsx buildHref properly prefixes anchor with '/' on non-home routes, so nav 'Services' on a detail page goes to /#services — verified working"
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "85%"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Static marketing site at https://hasanamba-premium.preview.emergentagent.com. 5 client-side routes (/ and /services/:id for audio/interior/detailing/lighting). No backend integration — quote form opens wa.me URL via window.open. Intercept window.open via page.evaluate before clicking submit (note: re-set the override on each page load, not just once). Major rebrand verified except 2 leftover 'Hasanamba' strings in WhatsAppButton.jsx (L15) and Testimonials.jsx (L15) and a wrong served <title>. ScrollToTop behavior should be re-tested after main agent fix.",
+  "rca of the issue": "1) Hasanamba leftovers: rebrand sweep missed string literals in WhatsAppButton.jsx and Testimonials.jsx — fix by replacing the brand name in both files. 2) Wrong <title>: index.html has correct title; suspect platform-level HTML transform on preview domain — mitigation: also set document.title in a useEffect at App-mount level as runtime fallback. 3) ScrollToTop fails from scrolled home → detail: ScrollToTop fires scrollTo(0,'instant') on pathname change, but content reveal/layout-shift can re-introduce scroll; replace with a useLayoutEffect + window.scrollTo(0,0) without behavior, or call inside requestAnimationFrame after layout."
+}

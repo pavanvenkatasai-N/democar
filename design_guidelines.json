@@ -1,0 +1,150 @@
+{
+  "theme": "Clean Portfolio",
+  "archetype": "Swiss & High-Contrast (Archetype 4) merged with Light Luxury",
+  "branding": {
+    "name": "Hasanamba Car Decor",
+    "description": "Premium luxury car stereo and styling shop based in Hassan, Karnataka.",
+    "price_point": "High-end (40k INR+)",
+    "contact": {
+      "location": "Thanniruhalla, Hassan",
+      "phone": "+91 97419 08073"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "tertiary": "#F3F4F6"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#4B5563",
+      "muted": "#9CA3AF"
+    },
+    "accent": {
+      "primary": "#0047FF",
+      "hover": "#0038CC",
+      "glow": "rgba(0, 71, 255, 0.4)",
+      "subtle": "#E5EDFF"
+    },
+    "border": {
+      "default": "#E5E7EB",
+      "focus": "#0047FF"
+    },
+    "surface": {
+      "glass": "bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm"
+    }
+  },
+  "typography": {
+    "font_families": {
+      "heading": "'Outfit', sans-serif",
+      "body": "'Manrope', sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tighter text-[#0A0A0A]",
+      "h2": "text-3xl sm:text-4xl font-medium tracking-tight text-[#0A0A0A]",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight text-[#0A0A0A]",
+      "h4": "text-lg sm:text-xl font-medium text-[#0A0A0A]",
+      "body": "text-base sm:text-lg text-[#4B5563] leading-relaxed",
+      "overline": "text-xs font-semibold uppercase tracking-[0.2em] text-[#0047FF]"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous spacing. 2-3x more padding than standard websites to convey luxury and breathing room.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-20 sm:py-32",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:gap-8",
+    "cards": "bg-[#F8F9FA] p-8 md:p-12 border border-[#E5E7EB] hover:border-[#0047FF]/30 transition-colors duration-300"
+  },
+  "components": {
+    "header": {
+      "style": "sticky top-0 z-50 glassmorphism",
+      "classes": "bg-white/70 backdrop-blur-xl border-b border-gray-200/50"
+    },
+    "buttons": {
+      "primary": "bg-[#0047FF] hover:bg-[#0038CC] text-white px-8 py-4 rounded-none text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,71,255,0.3)]",
+      "secondary": "bg-transparent border border-[#0A0A0A] hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-white px-8 py-4 rounded-none text-sm font-medium transition-all duration-300"
+    },
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case."
+  },
+  "motion": {
+    "scrolling": "Lenis smooth scrolling is HIGHLY RECOMMENDED for a premium feel.",
+    "entrance": "Framer motion staggered fade-ups for grid items (initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }).",
+    "hover": "Subtle scale-up on images (hover:scale-105) with overflow-hidden on parent."
+  },
+  "sections": [
+    {
+      "name": "Hero",
+      "description": "Minimalist premium introduction. High contrast typography against a clean background, overlapping with the sleek luxury car visual.",
+      "layout": "Grid or flex layout where text takes up 50% and the car visual takes up 50%, or a large central typography overlapping a wide cinematic shot."
+    },
+    {
+      "name": "Services Grid",
+      "description": "Bento grid layout showcasing Premium Audio Systems, Custom Car Interiors, Professional Detailing, and Advanced Lighting.",
+      "layout": "Asymmetrical Tetris grid. E.g., Audio takes up span-8, Detailing takes up span-4."
+    },
+    {
+      "name": "Portfolio Gallery",
+      "description": "High-end visual showcase of their work.",
+      "layout": "Masonry grid or a sleek horizontal scrolling carousel (Framer Motion) of high-res images without gaps, separated only by thin 1px borders."
+    },
+    {
+      "name": "Testimonials",
+      "description": "Social proof justifying the premium price.",
+      "layout": "Minimalist typography-focused cards. Big quote marks, serif or italicized text for the quote to contrast with the modern sans-serif."
+    },
+    {
+      "name": "About Us",
+      "description": "Story of Hasanamba Car Decor.",
+      "layout": "Text-heavy block with ample negative space. Off-center alignment."
+    },
+    {
+      "name": "Contact",
+      "description": "Location and phone number display only. No forms.",
+      "layout": "Massive typography for the phone number (+91 97419 08073) and clear typography for location (Thanniruhalla, Hassan)."
+    }
+  ],
+  "media": {
+    "images": [
+      {
+        "category": "hero",
+        "description": "Sleek luxury car silhouette with electric blue neon lighting accents on a white background",
+        "url": "https://static.prod-images.emergentagent.com/jobs/41cd89c1-4b89-4d15-b46f-89ac94231f38/images/028fa94e61c75362ec8b5c3e56adaf54832aa5fec0f8162f17471593bc6f514d.png"
+      },
+      {
+        "category": "service_interior",
+        "description": "Black and brown BMW luxury car interior",
+        "url": "https://images.unsplash.com/photo-1599912027667-755b68b4dd3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvcnxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "service_audio",
+        "description": "Bose speaker grill on a car door panel",
+        "url": "https://images.unsplash.com/photo-1758411898478-4f7e70d533d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxjYXIlMjBhdWRpbyUyMHN5c3RlbXxlbnwwfHx8fDE3Nzg0ODI4OTV8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "service_detailing",
+        "description": "Detailed shot of a Lamborghini being polished",
+        "url": "https://images.pexels.com/photos/14231701/pexels-photo-14231701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "category": "portfolio_1",
+        "description": "Mercedes-Benz interior design with premium leather",
+        "url": "https://images.pexels.com/photos/16716122/pexels-photo-16716122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "category": "portfolio_2",
+        "description": "Vintage luxury car interior with wooden dashboard",
+        "url": "https://images.pexels.com/photos/18262241/pexels-photo-18262241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette. DO NOT default to generic dark mode. This is a LIGHT, HIGH-CONTRAST premium theme.",
+    "Use Outfit for Headings and Manrope for body text. Enforce tracking-tighter on headings.",
+    "Implement a generous bento grid for the services section using the provided tertiary background color for cards.",
+    "Ensure all interactive components (buttons, links) have the required `data-testid` attributes.",
+    "DO NOT use placeholder image URLs. Rely entirely on the provided media URLs.",
+    "The Contact section must only display the provided phone number and location text. Do not render a contact form.",
+    "Use Phosphor icons (if needed) for a premium, lightweight look."
+  ]
+}
